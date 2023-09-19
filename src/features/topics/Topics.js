@@ -1,9 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"; //Link is imported from "react-router-dom" to create navigation links within the application.
 import ROUTES from "../../app/routes";
 // import selector
-import { useSelector } from "react-redux";
-import { selectTopics } from "./topicsSlice";
+import { useSelector } from "react-redux";  // is imported from "react-redux" to access data from the Redux store.
+import { selectTopics } from "./topicsSlice"; //is a selector used to retrieve the topics data from the Redux store.
 
 export default function Topics() {
   // Use the selector to select all the topics in state
@@ -37,3 +37,13 @@ export default function Topics() {
     </section>
   );
 }
+
+/*
+  The component renders a section with the title "Topics."
+  It maps over the topics data (likely an object) using Object.values(topics) to iterate through the topics.
+  For each topic, it renders an <li> element with a link (<Link>) that points to a specific topic's route using ROUTES.topicRoute(topic.id). 
+  It also displays the topic's name, icon, and the number of quizzes associated with it.
+  Below the list of topics, there's a "Create New Topic" button that also uses a Link to navigate to the "Create New Topic" route using ROUTES.newTopicRoute().
+  Overall, this component is responsible for displaying a list of topics fetched from the Redux store and providing navigation links to view individual topics or create new ones. 
+  It's a common pattern in web applications to use React and Redux for managing and displaying data.
+*/
